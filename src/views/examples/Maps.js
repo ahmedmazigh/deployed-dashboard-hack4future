@@ -26,7 +26,7 @@ import Header from "components/Headers/Header.js";
 const VideoWrapper = () => {
   return (
     <div className="video-container" style={{ height: `600px` }}>
-        <iframe width="1074" height="604" src="https://www.youtube.com/embed/RSMnAMRolhg" title="OIIAOIIA CAT × AFTER DARK (EXTENDED)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/RSMnAMRolhg" title="OIIAOIIA CAT × AFTER DARK (EXTENDED)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   );
 };
