@@ -19,7 +19,6 @@ import React from "react";
 
 // reactstrap components
 import { Card, Container, Row } from "reactstrap";
-import video from 'assets/videos/video.mp4'
 
 // core components
 import Header from "components/Headers/Header.js";
@@ -31,9 +30,11 @@ const VideoWrapper = () => {
         <source src={video} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      <iframe width="1074" height="604" src="https://www.youtube.com/embed/RSMnAMRolhg" title="OIIAOIIA CAT × AFTER DARK (EXTENDED)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   );
 };
+
 
 const Maps = () => {
   return (
