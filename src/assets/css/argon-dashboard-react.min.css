@@ -16305,7 +16305,7 @@ textarea[resize="horizontal"] {
     padding-bottom: 1rem;
   }
   .navbar-vertical.navbar-expand-md .navbar-brand-img {
-    max-height: 2.5rem;
+    max-height: 4rem;
   }
   .navbar-vertical.navbar-expand-md .navbar-user {
     margin-left: -1.5rem;
