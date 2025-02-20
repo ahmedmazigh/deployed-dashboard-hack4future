@@ -1,28 +1,11 @@
-/*!
-
-=========================================================
-* Argon Dashboard React - v1.2.4
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2024 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import { useState } from "react";
-// node.js library that concatenates classes (strings)
+// Bibliothèque pour concaténer des classes
 import classnames from "classnames";
-// javascipt plugin for creating charts
+// Plugin JavaScript pour créer des graphiques
 import Chart from "chart.js";
-// react plugin used to create charts
+// Plugins React pour créer des graphiques
 import { Line, Bar } from "react-chartjs-2";
-// reactstrap components
+// Composants Reactstrap
 import {
   Button,
   Card,
@@ -38,7 +21,7 @@ import {
   Col,
 } from "reactstrap";
 
-// core components
+// Composants et variables core
 import {
   chartOptions,
   parseOptions,
@@ -61,10 +44,11 @@ const Index = (props) => {
     setActiveNav(index);
     setChartExample1Data("data" + index);
   };
+
   return (
     <>
       <Header />
-      {/* Page content */}
+      {/* Contenu de la page */}
       <Container className="mt--7" fluid>
         <Row>
           <Col className="mb-5 mb-xl-0" xl="8">
@@ -73,9 +57,9 @@ const Index = (props) => {
                 <Row className="align-items-center">
                   <div className="col">
                     <h6 className="text-uppercase text-muted ls-1 mb-1">
-                      Overview
+                      Vue d'ensemble
                     </h6>
-                    <h2 className="mb-0">Collected waste</h2>
+                    <h2 className="mb-0">Déchets collectés</h2>
                   </div>
                   <div className="col">
                     <Nav className="justify-content-end" pills>
@@ -87,7 +71,7 @@ const Index = (props) => {
                           href="#pablo"
                           onClick={(e) => toggleNavs(e, 1)}
                         >
-                          <span className="d-none d-md-block">Month</span>
+                          <span className="d-none d-md-block">Mois</span>
                           <span className="d-md-none">M</span>
                         </NavLink>
                       </NavItem>
@@ -96,12 +80,11 @@ const Index = (props) => {
                           className={classnames("py-2 px-3", {
                             active: activeNav === 2,
                           })}
-                          data-toggle="tab"
                           href="#pablo"
                           onClick={(e) => toggleNavs(e, 2)}
                         >
-                          <span className="d-none d-md-block">Week</span>
-                          <span className="d-md-none">W</span>
+                          <span className="d-none d-md-block">Semaine</span>
+                          <span className="d-md-none">S</span>
                         </NavLink>
                       </NavItem>
                     </Nav>
@@ -109,7 +92,7 @@ const Index = (props) => {
                 </Row>
               </CardHeader>
               <CardBody>
-                {/* Chart */}
+                {/* Graphique en ligne pour la collecte de déchets */}
                 <div className="chart">
                   <Line
                     data={chartExample1[chartExample1Data]}
@@ -128,12 +111,12 @@ const Index = (props) => {
                     <h6 className="text-uppercase text-muted ls-1 mb-1">
                       Performance
                     </h6>
-                    <h2 className="mb-0">Total orders</h2>
+                    <h2 className="mb-0">Analyse de l'eau</h2>
                   </div>
                 </Row>
               </CardHeader>
               <CardBody>
-                {/* Chart */}
+                {/* Graphique en barres pour l'analyse de l'eau */}
                 <div className="chart">
                   <Bar
                     data={chartExample2.data}
@@ -150,7 +133,7 @@ const Index = (props) => {
               <CardHeader className="border-0">
                 <Row className="align-items-center">
                   <div className="col">
-                    <h3 className="mb-0">Page visits</h3>
+                    <h3 className="mb-0">Données du dispositif</h3>
                   </div>
                   <div className="col text-right">
                     <Button
@@ -159,7 +142,7 @@ const Index = (props) => {
                       onClick={(e) => e.preventDefault()}
                       size="sm"
                     >
-                      See all
+                      Voir tous
                     </Button>
                   </div>
                 </Row>
@@ -167,54 +150,51 @@ const Index = (props) => {
               <Table className="align-items-center table-flush" responsive>
                 <thead className="thead-light">
                   <tr>
-                    <th scope="col">Page name</th>
-                    <th scope="col">Visitors</th>
-                    <th scope="col">Unique users</th>
-                    <th scope="col">Bounce rate</th>
+                    <th scope="col">Site</th>
+                    <th scope="col">Déchets (kg)</th>
+                    <th scope="col">pH de l'eau</th>
+                    <th scope="col">Performance (%)</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">/argon/</th>
-                    <td>4,569</td>
-                    <td>340</td>
+                    <th scope="row">Site A</th>
+                    <td>450</td>
+                    <td>7.2</td>
                     <td>
-                      <i className="fas fa-arrow-up text-success mr-3" /> 46,53%
+                      <i className="fas fa-arrow-up text-success mr-3" /> 85%
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">/argon/index.html</th>
-                    <td>3,985</td>
-                    <td>319</td>
+                    <th scope="row">Site B</th>
+                    <td>320</td>
+                    <td>6.8</td>
                     <td>
-                      <i className="fas fa-arrow-down text-warning mr-3" />{" "}
-                      46,53%
+                      <i className="fas fa-arrow-down text-warning mr-3" /> 80%
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">/argon/charts.html</th>
-                    <td>3,513</td>
-                    <td>294</td>
+                    <th scope="row">Site C</th>
+                    <td>600</td>
+                    <td>7.5</td>
                     <td>
-                      <i className="fas fa-arrow-down text-warning mr-3" />{" "}
-                      36,49%
+                      <i className="fas fa-arrow-up text-success mr-3" /> 90%
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">/argon/tables.html</th>
-                    <td>2,050</td>
-                    <td>147</td>
+                    <th scope="row">Site D</th>
+                    <td>280</td>
+                    <td>7.0</td>
                     <td>
-                      <i className="fas fa-arrow-up text-success mr-3" /> 50,87%
+                      <i className="fas fa-arrow-up text-success mr-3" /> 75%
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">/argon/profile.html</th>
-                    <td>1,795</td>
-                    <td>190</td>
+                    <th scope="row">Site E</th>
+                    <td>510</td>
+                    <td>7.3</td>
                     <td>
-                      <i className="fas fa-arrow-down text-danger mr-3" />{" "}
-                      46,53%
+                      <i className="fas fa-arrow-up text-success mr-3" /> 88%
                     </td>
                   </tr>
                 </tbody>
@@ -226,7 +206,7 @@ const Index = (props) => {
               <CardHeader className="border-0">
                 <Row className="align-items-center">
                   <div className="col">
-                    <h3 className="mb-0">Social traffic</h3>
+                    <h3 className="mb-0">Répartition des données</h3>
                   </div>
                   <div className="col text-right">
                     <Button
@@ -235,7 +215,7 @@ const Index = (props) => {
                       onClick={(e) => e.preventDefault()}
                       size="sm"
                     >
-                      See all
+                      Voir tout
                     </Button>
                   </div>
                 </Row>
@@ -243,22 +223,22 @@ const Index = (props) => {
               <Table className="align-items-center table-flush" responsive>
                 <thead className="thead-light">
                   <tr>
-                    <th scope="col">Referral</th>
-                    <th scope="col">Visitors</th>
+                    <th scope="col">Source</th>
+                    <th scope="col">Contribution</th>
                     <th scope="col" />
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">Facebook</th>
-                    <td>1,480</td>
+                    <th scope="row">Capteurs de déchets</th>
+                    <td>45%</td>
                     <td>
                       <div className="d-flex align-items-center">
-                        <span className="mr-2">60%</span>
+                        <span className="mr-2">45%</span>
                         <div>
                           <Progress
                             max="100"
-                            value="60"
+                            value="45"
                             barClassName="bg-gradient-danger"
                           />
                         </div>
@@ -266,60 +246,16 @@ const Index = (props) => {
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">Facebook</th>
-                    <td>5,480</td>
+                    <th scope="row">Capteurs d'eau</th>
+                    <td>55%</td>
                     <td>
                       <div className="d-flex align-items-center">
-                        <span className="mr-2">70%</span>
+                        <span className="mr-2">55%</span>
                         <div>
                           <Progress
                             max="100"
-                            value="70"
+                            value="55"
                             barClassName="bg-gradient-success"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Google</th>
-                    <td>4,807</td>
-                    <td>
-                      <div className="d-flex align-items-center">
-                        <span className="mr-2">80%</span>
-                        <div>
-                          <Progress max="100" value="80" />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Instagram</th>
-                    <td>3,678</td>
-                    <td>
-                      <div className="d-flex align-items-center">
-                        <span className="mr-2">75%</span>
-                        <div>
-                          <Progress
-                            max="100"
-                            value="75"
-                            barClassName="bg-gradient-info"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">twitter</th>
-                    <td>2,645</td>
-                    <td>
-                      <div className="d-flex align-items-center">
-                        <span className="mr-2">30%</span>
-                        <div>
-                          <Progress
-                            max="100"
-                            value="30"
-                            barClassName="bg-gradient-warning"
                           />
                         </div>
                       </div>

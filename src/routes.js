@@ -17,7 +17,7 @@
 */
 import Index from "views/Index.js";
 import Profile from "views/examples/Profile.js";
-import Maps from "views/examples/Maps.js";
+import Live from "views/examples/Live.js";
 import Tables from "views/examples/Tables.js";
 
 var routes = [
@@ -30,10 +30,10 @@ var routes = [
   },
 
   {
-    path: "/maps",
+    path: "/Live",
     name: "Moniteur en direct",
     icon: "ni ni-tv-2 text-orange",
-    component: <Maps />,
+    component: <Live />,
     layout: "/admin",
   },
   {

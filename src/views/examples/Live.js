@@ -32,7 +32,7 @@ const VideoWrapper = () => {
 };
 
 
-const Maps = () => {
+const Live = () => {
   return (
     <>
       <Header />
@@ -50,4 +50,4 @@ const Maps = () => {
   );
 };
 
-export default Maps;
+export default Live;

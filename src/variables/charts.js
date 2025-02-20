@@ -1,5 +1,4 @@
 /*!
-
 =========================================================
 * Argon Dashboard React - v1.2.4
 =========================================================
@@ -13,9 +12,9 @@
 =========================================================
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
 */
 const Chart = require("chart.js");
+
 //
 // Chart extension for making the bars rounded
 // Code from: https://codepen.io/jedtrow/full/ygRYgo
@@ -53,23 +52,23 @@ Chart.elements.Rectangle.prototype.draw = function () {
   // Canvas doesn't allow us to stroke inside the width so we can
   // adjust the sizes to fit if we're setting a stroke on the line
   if (borderWidth) {
-    // borderWidth shold be less than bar width and bar height.
+    // borderWidth should be less than bar width and bar height.
     var barSize = Math.min(Math.abs(left - right), Math.abs(top - bottom));
     borderWidth = borderWidth > barSize ? barSize : borderWidth;
     var halfStroke = borderWidth / 2;
-    // Adjust borderWidth when bar top position is near vm.base(zero).
+    // Adjust borderWidth when bar top position is near vm.base (zero).
     var borderLeft = left + (borderSkipped !== "left" ? halfStroke * signX : 0);
     var borderRight =
       right + (borderSkipped !== "right" ? -halfStroke * signX : 0);
     var borderTop = top + (borderSkipped !== "top" ? halfStroke * signY : 0);
     var borderBottom =
       bottom + (borderSkipped !== "bottom" ? -halfStroke * signY : 0);
-    // not become a vertical line?
+    // Not become a vertical line?
     if (borderLeft !== borderRight) {
       top = borderTop;
       bottom = borderBottom;
     }
-    // not become a horizontal line?
+    // Not become a horizontal line?
     if (borderTop !== borderBottom) {
       left = borderLeft;
       right = borderRight;
@@ -113,8 +112,6 @@ Chart.elements.Rectangle.prototype.draw = function () {
       nextCornerId = 0;
     }
 
-    // let nextCorner = cornerAt(nextCornerId);
-
     let width = corners[2][0] - corners[1][0];
     let height = corners[0][1] - corners[1][1];
     let x = corners[1][0];
@@ -152,7 +149,7 @@ var fonts = {
   base: "Open Sans",
 };
 
-// Colors
+// Couleurs
 var colors = {
   gray: {
     100: "#f6f9fc",
@@ -179,11 +176,10 @@ var colors = {
   transparent: "transparent",
 };
 
-// Methods
+// Méthodes
 
-// Chart.js global options
+// Options globales de Chart.js
 function chartOptions() {
-  // Options
   var options = {
     defaults: {
       global: {
@@ -255,7 +251,7 @@ function chartOptions() {
     },
   };
 
-  // yAxes
+  // Paramétrage des axes Y
   Chart.scaleService.updateScaleDefaults("linear", {
     gridLines: {
       borderDash: [2],
@@ -280,7 +276,7 @@ function chartOptions() {
     },
   });
 
-  // xAxes
+  // Paramétrage des axes X
   Chart.scaleService.updateScaleDefaults("category", {
     gridLines: {
       drawBorder: false,
@@ -295,7 +291,7 @@ function chartOptions() {
   return options;
 }
 
-// Parse global options
+// Parse des options globales
 function parseOptions(parent, options) {
   for (var item in options) {
     if (typeof options[item] !== "object") {
@@ -306,7 +302,7 @@ function parseOptions(parent, options) {
   }
 }
 
-// Example 1 of Chart inside src/views/Index.js (Sales value - Card)
+// Exemple 1 : Graphique en ligne pour la collecte de déchets
 let chartExample1 = {
   options: {
     scales: {
@@ -318,8 +314,8 @@ let chartExample1 = {
           },
           ticks: {
             callback: function (value) {
-              if (!(value % 10)) {
-                return "$" + value + "k";
+              if (!(value % 50)) {
+                return value + " kg";
               }
             },
           },
@@ -332,42 +328,41 @@ let chartExample1 = {
           var label = data.datasets[item.datasetIndex].label || "";
           var yLabel = item.yLabel;
           var content = "";
-
           if (data.datasets.length > 1) {
             content += label;
           }
-
-          content += "$" + yLabel + "k";
+          content += yLabel + " kg";
           return content;
         },
       },
     },
   },
+  // Données pour la collecte de déchets (en kg)
   data1: (canvas) => {
     return {
-      labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      labels: ["Mai", "Juin", "Juil", "Août", "Sept", "Oct", "Nov", "Déc"],
       datasets: [
         {
-          label: "Performance",
-          data: [0, 20, 10, 30, 15, 40, 20, 60, 60],
+          label: "Déchets collectés (kg)",
+          data: [100, 150, 120, 200, 180, 220, 210, 250],
         },
       ],
     };
   },
   data2: (canvas) => {
     return {
-      labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      labels: ["Mai", "Juin", "Juil", "Août", "Sept", "Oct", "Nov", "Déc"],
       datasets: [
         {
-          label: "Performance",
-          data: [0, 20, 5, 25, 10, 30, 15, 40, 40],
+          label: "Variation des déchets (kg)",
+          data: [110, 140, 130, 190, 170, 230, 205, 240],
         },
       ],
     };
   },
 };
 
-// Example 2 of Chart inside src/views/Index.js (Total orders - Card)
+// Exemple 2 : Graphique en barres pour l'analyse de l'eau
 let chartExample2 = {
   options: {
     scales: {
@@ -376,8 +371,7 @@ let chartExample2 = {
           ticks: {
             callback: function (value) {
               if (!(value % 10)) {
-                //return '$' + value + 'k'
-                return value;
+                return value + " %";
               }
             },
           },
@@ -393,18 +387,19 @@ let chartExample2 = {
           if (data.datasets.length > 1) {
             content += label;
           }
-          content += yLabel;
+          content += yLabel + " %";
           return content;
         },
       },
     },
   },
+  // Données pour l'analyse de la qualité de l'eau (en pourcentage)
   data: {
-    labels: ["Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    labels: ["Juil", "Août", "Sept", "Oct", "Nov", "Déc"],
     datasets: [
       {
-        label: "Sales",
-        data: [25, 20, 30, 22, 17, 29],
+        label: "Qualité de l'eau (%)",
+        data: [80, 85, 75, 90, 82, 88],
         maxBarThickness: 10,
       },
     ],
@@ -412,8 +407,8 @@ let chartExample2 = {
 };
 
 module.exports = {
-  chartOptions, // used inside src/views/Index.js
-  parseOptions, // used inside src/views/Index.js
-  chartExample1, // used inside src/views/Index.js
-  chartExample2, // used inside src/views/Index.js
+  chartOptions, // utilisé dans src/views/Index.js
+  parseOptions, // utilisé dans src/views/Index.js
+  chartExample1, // utilisé dans src/views/Index.js
+  chartExample2, // utilisé dans src/views/Index.js
 };
