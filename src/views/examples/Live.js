@@ -20,13 +20,13 @@ const devices = [
     id: "Dispositif A1",
     status: "Actif",
     location: "Zone Industrielle",
-    videoUrl: "https://www.youtube.com/embed/RSMnAMRolhg"
+    videoUrl: "https://www.youtube.com/embed/kcgJrsg9_dE"
   },
   {
     id: "Dispositif B2",
     status: "Actif",
     location: "Zone Urbaine",
-    videoUrl: "https://www.youtube.com/embed/tP-EsZ-deHg"
+    videoUrl: "https://www.youtube.com/embed/12u2Vi6geT0"
   },
   {
     id: "Dispositif C3",
