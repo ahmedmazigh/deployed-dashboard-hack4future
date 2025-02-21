@@ -26,7 +26,7 @@ const devices = [
     id: "Dispositif B2",
     status: "Actif",
     location: "Zone Urbaine",
-    videoUrl: "https://www.youtube.com/embed/12u2Vi6geT0"
+    videoUrl: "https://www.youtube.com/embed/tP-EsZ-deHg"
   },
   {
     id: "Dispositif C3",
