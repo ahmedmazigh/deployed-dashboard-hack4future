@@ -26,19 +26,19 @@ const devices = [
     id: "Dispositif B2",
     status: "Actif",
     location: "Zone Urbaine",
-    videoUrl: "https://www.youtube.com/embed/tP-EsZ-deHg"
+    videoUrl: "https://www.youtube.com/embed/YWfZFpWeo6Y"
   },
   {
     id: "Dispositif C3",
     status: "Maintenance",
     location: "Zone Rurale",
-    videoUrl: "https://www.youtube.com/embed/0QRFEL2aQNM"
+    videoUrl: "https://www.youtube.com/embed/66stemTaOsw"
   },
   {
     id: "Dispositif D4",
     status: "Actif",
     location: "Zone Portuaire",
-    videoUrl: "https://www.youtube.com/embed/5eR6QPcoL_w"
+    videoUrl: "https://www.youtube.com/embed/kcgJrsg9_dE"
   }
 ];
 
